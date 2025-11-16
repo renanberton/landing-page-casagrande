@@ -170,6 +170,11 @@ nav ul li {
     margin-bottom: 15px;
 }
 
+.beneficio-item:hover {
+    padding: 10px;
+    transition: 0.5s;
+}    
+
 .beneficio-item h3 {
     font-size: 18px;
     font-weight: 700;
@@ -342,7 +347,6 @@ nav ul li {
     text-align: left;
 }
 
-
 .cta-content {
     width: 100%;
     height: 420px;
@@ -352,6 +356,14 @@ nav ul li {
     align-items: center;
     background-color: #44444E;
     gap: 30px;    
+}
+
+.cta-content .grid {
+    max-width: 500px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .cta-content h2 {
@@ -446,7 +458,7 @@ nav ul li {
     .card-testemunho p {
         text-align: justify;
     }
-    
+ 
     .beneficios,
     .testemunhos,
     .faq {
@@ -601,8 +613,8 @@ nav ul li {
     }
     
     .whatsapp-icon {
-        width: 26px;
-        height: 26px;
+        width: 50px;
+        height: 50  px;
     }
     
     .whatsapp-tooltip {
@@ -621,3 +633,105 @@ nav ul li {
         height: 50px;
     }
 }
+
+/* ===== ANIMAÇÕES SIMPLES FADE-IN ===== */
+
+/* Fade-in suave para textos */
+.container-texto h1 {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease 0.5s forwards;
+}
+
+.container-texto p {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease 0.8s forwards;
+}
+
+.container-texto a {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease 1.1s forwards;
+}
+
+/* Animação do fade-in */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in para a imagem também */
+.container-img img {
+    opacity: 0;
+    transform: translateX(30px);
+    animation: fadeInRight 1s ease 0.7s forwards;
+}
+
+@keyframes fadeInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Contador de urgência */
+.contador {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.contador-item {
+    background: #C1785A;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.contador-item span {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    display: block;
+}
+
+.contador-item small {
+    font-size: 12px;
+    color: rgba(255,255,255,0.9);
+}
+
+/* Prova social */
+.alunos-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat strong {
+    font-size: 32px;
+    color: #C1785A;
+    display: block;
+}
+
+.stat span {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Garantia */
+.garantia-texto {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+
