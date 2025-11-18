@@ -49,7 +49,8 @@ nav ul li {
 }
 
 .container-texto a, .cta-content a, .banner a {
-    width: 350px;
+    width: 90%; 
+    max-width: 350px; 
     background-color: #E99A00;
     height: 50px;
     color: #fff;
@@ -62,7 +63,7 @@ nav ul li {
     font-size: 22px;
 }
 
-.container-texto a:hover, .cta-content a:hover {
+.container-texto a:hover, .cta-content a:hover, .banner a:hover {
     background-color: transparent;
     border: 2px solid #000;
     color: #000;
@@ -74,6 +75,7 @@ nav ul li {
     font-weight: 300;
     font-size: 16px;
     text-align: justify;
+    width: 80%;
 }
 
 .container-texto strong {
@@ -84,6 +86,7 @@ nav ul li {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-size: 16px;
+    text-align: left;
 }
 
 .container-texto ul {
@@ -109,7 +112,6 @@ nav ul li {
     font-weight: 700;
     font-size: 36px;
 }
-
 
 .beneficios {
     padding: 50px 0;         
@@ -173,7 +175,6 @@ nav ul li {
     order: 1;
 }
 
-
 .testemunhos {
     padding: 80px 0; 
     text-align: center;
@@ -182,7 +183,6 @@ nav ul li {
     background-color: #E99A00;
     object-fit: cover;
 }
-
 
 .testemunhos h2 {
     font-size: 36px;
@@ -233,6 +233,7 @@ nav ul li {
     font-weight: 500;
     text-align: justify;
     width: 80%;
+    min-height: 200px;
 }
 
 .flex {
@@ -377,110 +378,6 @@ nav ul li {
     color: #fff;
 }
 
-@media (max-width: 768px) {
-    html, body {
-        overflow-x: hidden;
-    }
-    
-    .container {
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .grid {
-        flex-wrap: wrap;
-    }
-
-    .home, .content {
-        width: 100%;
-        max-width: 100%;
-        flex-direction: column;
-        height: auto;        
-        gap: 30px;
-    }
-
-    .container-texto, .container-img {
-        width: 100%;
-        text-align: center;
-        align-items: center;
-    }
-
-    .container-img img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .beneficios .container,
-    .faq-container {
-        max-width: 100%;
-    }
-
-    .faq.container p {
-        text-align: justify;
-    }
-
-    .beneficios-grid,
-    .grid-testemunhos {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card-testemunho {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .card-testemunho .autor {
-        display: flex;
-        justify-content: center;
-    }
-
-    .beneficio-item,
-    .card-testemunho {
-        width: 100%;
-        text-align: center;
-        max-width: none;
-    }
-
-    .card-testemunho p {
-        text-align: justify;
-    }
- 
-    .beneficios,
-    .testemunhos,
-    .faq {
-        padding: 50px 0; 
-    }
-
-    .cta-content {
-        padding: 50px 20px; 
-        text-align: center;
-        height: auto;
-        margin: 50px 0 0 0; 
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .container-texto h1 {
-        font-size: 28px;
-        line-height: 1.3;
-    }
-
-    .container-texto a:hover, .cta-content a:hover {
-        width: 180px;
-        background-color: transparent;
-    }
-
-    a {
-        width: 100% !important;
-    }
-}
-
 /* WhatsApp Flutuante */
 .whatsapp-float {
     position: fixed;
@@ -589,43 +486,7 @@ nav ul li {
     }
 }
 
-/* Responsividade para WhatsApp */
-@media (max-width: 768px) {
-    .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    .whatsapp-link {
-        width: 55px;
-        height: 55px;
-    }
-    
-    .whatsapp-icon {
-        width: 50px;
-        height: 50  px;
-    }
-    
-    .whatsapp-tooltip {
-        display: none; /* Esconde tooltip no mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    .whatsapp-float {
-        bottom: 15px;
-        right: 15px;
-    }
-    
-    .whatsapp-link {
-        width: 50px;
-        height: 50px;
-    }
-}
-
 /* ===== ANIMAÇÕES SIMPLES FADE-IN ===== */
-
-/* Fade-in suave para textos */
 .container-texto h1 {
     opacity: 0;
     transform: translateY(30px);
@@ -644,7 +505,6 @@ nav ul li {
     animation: fadeInUp 1s ease 1.1s forwards;
 }
 
-/* Animação do fade-in */
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -652,7 +512,6 @@ nav ul li {
     }
 }
 
-/* Fade-in para a imagem também */
 .container-img img {
     opacity: 0;
     transform: translateX(30px);
@@ -684,7 +543,11 @@ nav ul li {
 .banner {
     width: 100%;
     height: 100vh;
-    background: url("./assets/imgs/banner3.png");
+    background: url(./assets/imgs/banner3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -750,9 +613,19 @@ nav ul li {
     color: #555;
 }
 
+/* ============ RESPONSIVO ============ */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    .container {
+        width: 100%;
+        overflow: hidden;
+    }
+} /* ← FECHAMENTO CORRIGIDO */
 
-
-
+/* Vídeo (fora da media query) */
 .video-container {
     position: relative;
     width: 100%;
@@ -776,11 +649,11 @@ nav ul li {
     left: 0;
     right: 0;
     bottom: 0;
+    pointer-events: none;
     background: linear-gradient(
         to bottom,
         rgba(0,0,0,0.2) 0%,
         rgba(0,0,0,0.1) 50%,
         rgba(0,0,0,0.2) 100%
     );
-    pointer-events: none;
 }
