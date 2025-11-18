@@ -751,3 +751,36 @@ nav ul li {
 }
 
 
+
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 3rem auto 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.hero-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.2) 0%,
+        rgba(0,0,0,0.1) 50%,
+        rgba(0,0,0,0.2) 100%
+    );
+    pointer-events: none;
+}
