@@ -172,7 +172,7 @@ body {
     text-align: center;
     color: var(--dark);
     width: 90%;    
-    margin: 50px auto;
+    margin: 50px auto !important;
 }
 
 /* ===== PROOF GRID & MODULES ===== */
@@ -352,6 +352,90 @@ body {
     text-align: center;    
 }
 
+.google-reviews .section-header {
+    display: none;
+}
+
+
+/* ===== CARROSSEL AUTOMÁTICO COM 2 CARDS ===== */
+.carrossel-auto-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 40px auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carrossel-track {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 30px;
+    will-change: transform;
+}
+
+.carrossel-slide {
+    flex: 0 0 calc(50% - 15px); /* 2 cards com gap de 30px */
+    min-width: calc(50% - 15px);
+    transform: scale(0.95);
+    opacity: 0.85;
+    transition: all 0.5s ease;
+}
+
+.carrossel-slide.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Estilo dos cards no carrossel */
+.google-review-card.carrossel-card {
+    height: auto;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+/* Efeito hover sutil */
+.google-review-card.carrossel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Remover controles visuais */
+.carrossel-auto-container .carousel-controls,
+.carrossel-auto-container .carousel-indicators {
+    display: none;
+}
+
+/* Responsividade do carrossel - CORRIGIDO */
+@media (max-width: 768px) {
+    .carrossel-auto-container {
+        max-width: 100%;
+        padding: 20px;
+    }
+    
+    .carrossel-track {
+        justify-content: flex-start; /* IMPORTANTE para centralização */
+    }
+    
+    .carrossel-slide {
+        flex: 0 0 100%; /* 1 card no mobile */
+        min-width: 100%;
+        max-width: 500px; /* Limitar largura máxima */
+        margin: 0 auto; /* Centralizar horizontalmente */
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .carrossel-auto-container {
+        padding: 15px;
+    }
+    
+    .carrossel-slide {
+        max-width: 100%; /* Usar 100% da largura disponível */
+    }
+}
+
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -426,6 +510,7 @@ body {
     align-items: center;
     gap: 10px;
     margin-bottom: 15px;
+    justify-content: center;
 }
 
 .stars {
@@ -527,7 +612,7 @@ body {
 
 .problem-item p {
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: 450;
     margin: 0;
     color: var(--dark);
 }
@@ -539,7 +624,7 @@ body {
 .solution-box {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: var(--dark);
-    padding: 50px;
+    padding: 50px 30px;
     border-radius: 15px;
     text-align: center;
     max-width: 1440px;
@@ -835,7 +920,7 @@ body {
     color: var(--light);
 }
 
-/* ===== RESPONSIVIDADE ===== */
+/* ===== RESPONSIVIDADE GERAL ===== */
 @media (max-width: 1024px) {
     .aula-magna-proof .modules-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1067,6 +1152,131 @@ body {
 
 @media (max-width: 320px) {
     .hero {
-        height: 1200px;
+        height: 1300px;
     }
+}
+
+/* =========================================================
+   TIPOGRAFIA — ESTILO PROFISSIONAL PARA LANDING PAGE DE CURSO
+   ========================================================= */
+
+/* ===== FONTES GERAIS ===== */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    color: var(--dark);
+    letter-spacing: 0.2px;
+}
+
+/* ===== HEADINGS GERAIS ===== */
+h1, h2, h3, h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+}
+
+/* ===== TÍTULOS MAIORES ===== */
+.title-xl {
+    font-size: 3.3rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--dark);
+}
+
+.title-lg {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+/* ===== SUBTÍTULOS ===== */
+.subtitle {
+    font-size: 1.4rem;
+    font-weight: 300;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* ===== PARÁGRAFOS ===== */
+.p-base {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.p-lg {
+    font-size: 1.35rem;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.p-bold {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* ===== DESTAQUES ===== */
+.text-highlight {
+    color: var(--primary);
+    font-weight: 900;
+}
+
+.text-important {
+    color: var(--dark);
+    background: var(--primary-light);
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+/* ===== HERO ===== */
+.hero-content h1 {
+    font-size: 3.6rem;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    max-width: 800px;
+    margin-top: 20px;
+    opacity: 0.95;
+}
+
+/* ===== GRADUAÇÃO DE TEXTOS PELOS SECTIONS ===== */
+.section-header h2 {
+    font-size: 2.6rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.section-header p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* ===== CARDS ===== */
+.google-review-card p,
+.review-text,
+.module-description,
+.step p,
+.problem-item p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .title-xl { font-size: 2.4rem; }
+    .title-lg { font-size: 2rem; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.2rem; }
+    .section-header h2 { font-size: 2rem; }
+    .p-base, .p-lg, .module-description { font-size: 1.1rem; }
 }
